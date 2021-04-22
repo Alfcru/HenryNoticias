@@ -1,5 +1,6 @@
 package com.HenryNews.model;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
+@JsonTypeInfo()
 
 
 public abstract class Noticias {
