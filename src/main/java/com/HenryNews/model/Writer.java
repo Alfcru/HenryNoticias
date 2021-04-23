@@ -19,9 +19,10 @@ public class Writer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank
+    @NotBlank(message = "Nombre Obligatorio!")
     private String nombre;
-    @NotBlank
+
+    @NotBlank(message = "Apellido Obligatorio!")
     private String apellido;
 
     @NotNull

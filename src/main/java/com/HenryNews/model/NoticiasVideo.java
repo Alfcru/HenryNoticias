@@ -2,12 +2,15 @@ package com.HenryNews.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 
 @Data
-@Entity
-@EqualsAndHashCode
+@NoArgsConstructor
+@Entity(name = "NoticiasVideo")
+@EqualsAndHashCode(callSuper = true)
+
 public class NoticiasVideo extends Noticias{
     private String titulo;
     private String descripcion;

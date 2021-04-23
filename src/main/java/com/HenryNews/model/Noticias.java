@@ -8,6 +8,7 @@ import org.springframework.data.annotation.AccessType;
 
 import javax.persistence.*;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 
 @Entity
@@ -19,14 +20,18 @@ import javax.persistence.Id;
         @JsonSubTypes.Type(value = NoticiasTexto.class, name = "TEXTO"),
         @JsonSubTypes.Type(value = NoticiasVideo.class, name = "VIDEO")
 })
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 
 
-public abstract class Noticias {
+public abstract class Noticias implements Serializable {
 
     @Id
     private Integer id;
     private String titulo;
     private String descripcion;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ownerId")
     private Writer owner;
 
     @AccessType(AccessType.Type.PROPERTY)
