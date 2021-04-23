@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
+import java.util.List;
+
 @Service
 public class WriterService {
 
@@ -15,5 +17,9 @@ public class WriterService {
 
     public Writer getWriter(Integer id){
         return writerRepository.findById(id).orElseThrow(()-> new HttpClientErrorException(HttpStatus.NOT_FOUND));
+    }
+
+    public List<Writer> getWriters() {
+        return  writerRepository.findAll();
     }
 }
