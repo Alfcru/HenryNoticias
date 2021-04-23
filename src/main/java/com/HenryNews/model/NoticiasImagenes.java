@@ -9,4 +9,9 @@ import java.util.List;
 @Entity
 public class NoticiasImagenes extends Noticias{
     private List<String> urlImagenes;
+
+    @Override
+    public NoticiasEnum noticiasEnum() {
+        return NoticiasEnum.IMAGENES;
+    }
 }

@@ -8,4 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NoticiasTexto extends Noticias{
     private String texto;
+
+    @Override
+    public NoticiasEnum noticiasEnum() {
+        return NoticiasEnum.TEXTO;
+    }
 }

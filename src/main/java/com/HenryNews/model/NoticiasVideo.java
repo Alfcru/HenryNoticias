@@ -12,4 +12,9 @@ public class NoticiasVideo extends Noticias{
     private String titulo;
     private String descripcion;
     private String urlvideo;
+
+    @Override
+    public NoticiasEnum noticiasEnum() {
+        return NoticiasEnum.VIDEO;
+    }
 }
