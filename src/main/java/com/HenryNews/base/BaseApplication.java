@@ -8,7 +8,7 @@ public class BaseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BaseApplication.class, args);
-		System.out.println("HOla ");
+		System.out.println("Noticas Con Spring BOT");
 	}
 
 }
