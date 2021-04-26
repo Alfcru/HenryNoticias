@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -32,7 +32,7 @@ public abstract class Noticias implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ownerId")
-    private Writer owner;
+    private Escritor owner;
 
     @AccessType(AccessType.Type.PROPERTY)
     public abstract NoticiasEnum noticiasEnum();

@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -6,18 +6,18 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 
+
 @Data
 @NoArgsConstructor
-@Entity(name = "NoticiasVideo")
 @EqualsAndHashCode(callSuper = true)
+@Entity(name = "NoticasTexto")
 
-public class NoticiasVideo extends Noticias{
-    private String titulo;
-    private String descripcion;
-    private String urlvideo;
+public class NoticiasTexto extends Noticias{
+
+    private String texto;
 
     @Override
     public NoticiasEnum noticiasEnum() {
-        return NoticiasEnum.VIDEO;
+        return NoticiasEnum.TEXTO;
     }
 }

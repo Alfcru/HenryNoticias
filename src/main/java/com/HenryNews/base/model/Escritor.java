@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @NoArgsConstructor
 
-public class Writer {
+public class Escritor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

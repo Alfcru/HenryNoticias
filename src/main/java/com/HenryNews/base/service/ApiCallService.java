@@ -1,11 +1,10 @@
-package com.HenryNews.service;
+package com.HenryNews.base.service;
 
-import com.HenryNews.model.response.ApiWeatherResponse;
+import com.HenryNews.base.model.response.ApiWeatherResponse;
 import com.google.gson.Gson;
 
-import com.HenryNews.model.response.Location;
-import com.HenryNews.model.response.Main;
-import com.HenryNews.model.response.OpenWeatherResponse;
+import com.HenryNews.base.model.response.Main;
+import com.HenryNews.base.model.response.OpenWeatherResponse;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomUtils;
@@ -16,7 +15,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.HashMap;
 
 @Service
 @Slf4j

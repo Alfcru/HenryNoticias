@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 public enum NoticiasEnum {
 

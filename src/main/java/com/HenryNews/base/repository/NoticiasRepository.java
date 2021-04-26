@@ -1,6 +1,6 @@
-package com.HenryNews.repository;
+package com.HenryNews.base.repository;
 
-import com.HenryNews.model.Noticias;
+import com.HenryNews.base.model.Noticias;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

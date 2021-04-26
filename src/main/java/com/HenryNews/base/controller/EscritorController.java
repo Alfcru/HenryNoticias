@@ -1,7 +1,7 @@
-package com.HenryNews.controller;
+package com.HenryNews.base.controller;
 
-import com.HenryNews.model.Writer;
-import com.HenryNews.service.WriterService;
+import com.HenryNews.base.model.Escritor;
+import com.HenryNews.base.service.EscritorService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +13,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/writer")
-public class WriterController {
+public class EscritorController {
 
     @Autowired
-    private WriterService writerService;
+    private EscritorService escritorService;
 
     @GetMapping
     @Operation(summary = "Lista de Escritores")
-    public List<Writer> getWriters(){
-        return writerService.getWriters();
+    public List<Escritor> getWriters(){
+        return escritorService.getEscritor();
     }
 
     @GetMapping("/{id}")
     @Operation(summary = "Consultar escritor por su ID")
-    public Writer getWriter(@PathVariable Integer id){
-        return writerService.getWriter(id);
+    public Escritor getWriter(@PathVariable Integer id){
+        return escritorService.getEscritor(id);
     }
 
 //    @GetMapping("/writerDTO/{id}")
@@ -35,6 +35,5 @@ public class WriterController {
 //    public WriterDTO getWriterDTO(@PathVariable Integer id){
 //        return conversionService.convert(writerService.getWriter(id), WriterDTO.class);
 //    }
-
 
 }
