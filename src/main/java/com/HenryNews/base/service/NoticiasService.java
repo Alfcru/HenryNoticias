@@ -1,11 +1,11 @@
-package com.HenryNews.service;
+package com.HenryNews.base.service;
 
 
-import com.HenryNews.model.Noticias;
-import com.HenryNews.model.NoticiasEnum;
-import com.HenryNews.model.PaginationResponse;
-import com.HenryNews.model.Writer;
-import com.HenryNews.repository.NoticiasRepository;
+import com.HenryNews.base.model.Escritor;
+import com.HenryNews.base.model.Noticias;
+import com.HenryNews.base.model.NoticiasEnum;
+import com.HenryNews.base.model.PaginacionResponse;
+import com.HenryNews.base.repository.NoticiasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,7 +23,7 @@ public class NoticiasService {
 
     @Autowired
     private NoticiasRepository noticiasRepository;
-    private WriterService writerService;
+    private EscritorService escritorService;
 
     public Noticias getNoticiaById(Integer id) {
         return noticiasRepository.findById(id).orElse(new Noticias() {
@@ -34,14 +34,14 @@ public class NoticiasService {
         });
     }
 
-    public PaginationResponse<Noticias> getAll(Integer page, Integer size) {
+    public PaginacionResponse<Noticias> getAll(Integer page, Integer size) {
         if(!Objects.isNull(page) && !Objects.isNull(size)) {
             Pageable pageable = PageRequest.of(page, size);
             Page<Noticias> noticiasPage = noticiasRepository.findAll(pageable);
-            return new PaginationResponse<>(noticiasPage.getContent(), noticiasPage.getTotalPages(), noticiasPage.getTotalElements());
+            return new PaginacionResponse<>(noticiasPage.getContent(), noticiasPage.getTotalPages(), noticiasPage.getTotalElements());
         }
             List<Noticias> noticiasList = noticiasRepository.findAll();
-            return new PaginationResponse<>(noticiasList, 1, (long) noticiasList.size());
+            return new PaginacionResponse<>(noticiasList, 1, (long) noticiasList.size());
     }
 
     public Noticias addNoticia(Noticias noticias) {
@@ -54,7 +54,7 @@ public class NoticiasService {
 
     public void addWriter(Integer id, Integer writerID) {
         Noticias noticias = getNoticiaById(id);
-        Writer writer = writerService.getWriter(writerID);
+        Escritor writer = escritorService.getEscritor(writerID);
         noticias.setOwner(writer);
         noticiasRepository.save(noticias);
     }

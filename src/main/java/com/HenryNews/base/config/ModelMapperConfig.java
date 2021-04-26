@@ -1,4 +1,4 @@
-package com.HenryNews.config;
+package com.HenryNews.base.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

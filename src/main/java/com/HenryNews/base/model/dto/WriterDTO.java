@@ -1,4 +1,4 @@
-package com.HenryNews.model.dto;
+package com.HenryNews.base.model.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

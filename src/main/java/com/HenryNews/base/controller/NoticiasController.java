@@ -1,8 +1,8 @@
-package com.HenryNews.controller;
+package com.HenryNews.base.controller;
 
-import com.HenryNews.model.Noticias;
-import com.HenryNews.model.PaginationResponse;
-import com.HenryNews.service.NoticiasService;
+import com.HenryNews.base.model.Noticias;
+import com.HenryNews.base.model.PaginacionResponse;
+import com.HenryNews.base.service.NoticiasService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class NoticiasController {
 
     @GetMapping
     @Operation(summary = "Trae todas las Noticias")
-    public PaginationResponse<Noticias> getAll(@RequestParam(value = "size", defaultValue = "10") Integer size,
+    public PaginacionResponse<Noticias> getAll(@RequestParam(value = "size", defaultValue = "10") Integer size,
                                                @RequestParam(value = "page", defaultValue = "0") Integer page){
         return noticiasService.getAll(page, size);
     }

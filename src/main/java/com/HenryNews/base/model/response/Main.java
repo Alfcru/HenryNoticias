@@ -1,4 +1,4 @@
-package com.HenryNews.model.response;
+package com.HenryNews.base.model.response;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.AllArgsConstructor;

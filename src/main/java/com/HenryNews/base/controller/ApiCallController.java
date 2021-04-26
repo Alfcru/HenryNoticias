@@ -1,7 +1,7 @@
-package com.HenryNews.controller;
+package com.HenryNews.base.controller;
 
-import com.HenryNews.model.response.ApiWeatherResponse;
-import com.HenryNews.service.ApiCallService;
+import com.HenryNews.base.model.response.ApiWeatherResponse;
+import com.HenryNews.base.service.ApiCallService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

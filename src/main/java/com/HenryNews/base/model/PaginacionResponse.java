@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class PaginationResponse<T> implements Serializable {
+public class PaginacionResponse<T> implements Serializable {
 
     private List<T> response;
     private int totalPages;

@@ -1,4 +1,4 @@
-package com.HenryNews.model;
+package com.HenryNews.base.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
