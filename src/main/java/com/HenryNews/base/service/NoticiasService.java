@@ -48,11 +48,11 @@ public class NoticiasService {
         return noticiasRepository.save(noticias);
     }
 
-    public void deleteWrite(Integer id) {
+    public void deleteEscritor(Integer id) {
         noticiasRepository.deleteById(id);
     }
 
-    public void addWriter(Integer id, Integer writerID) {
+    public void addEscritor(Integer id, Integer writerID) {
         Noticias noticias = getNoticiaById(id);
         Escritor writer = escritorService.getEscritor(writerID);
         noticias.setOwner(writer);
