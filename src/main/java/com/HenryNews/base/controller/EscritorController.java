@@ -1,13 +1,12 @@
 package com.HenryNews.base.controller;
 
 import com.HenryNews.base.model.Escritor;
+import com.HenryNews.base.model.Noticias;
 import com.HenryNews.base.service.EscritorService;
+import com.HenryNews.base.service.NoticiasService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +27,13 @@ public class EscritorController {
     @Operation(summary = "Consultar escritor por su ID")
     public Escritor getWriter(@PathVariable Integer id){
         return escritorService.getEscritor(id);
+    }
+
+    @PostMapping
+    @Operation(summary = "agregar un escritor")
+    public String postEscritor(@RequestBody Escritor escritores){
+        Escritor escritor = escritorService.addEscritor(escritores);
+        return ("Se dio Alta la escritor: " + escritor);
     }
 
 //    @GetMapping("/writerDTO/{id}")
