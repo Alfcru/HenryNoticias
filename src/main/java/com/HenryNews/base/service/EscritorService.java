@@ -22,4 +22,9 @@ public class EscritorService {
     public List<Escritor> getEscritor() {
         return  escritorRepository.findAll();
     }
+
+
+    public Escritor addEscritor(Escritor escritores) {
+        return escritorRepository.save(escritores);
+    }
 }
