@@ -38,14 +38,14 @@ public class NoticiasController {
     @DeleteMapping("/{id}")
     @Operation(summary = "Eliminar Noticia por Id")
     public String deleteNoticia(@PathVariable("id") Integer id){
-        noticiasService.deleteWrite(id);
+        noticiasService.deleteEscritor(id);
         return ("Noticias eliminada por id: "+ id);
     }
 
     @PutMapping("/{id}/write/{writeId}")
     @Operation(summary = "Agregar Escritor a la Noticia")
     public String addWriter(@PathVariable("id") Integer id, @PathVariable("writeId") Integer writeId){
-        noticiasService.addWriter(id, writeId);
+        noticiasService.addEscritor(id, writeId);
         return ("Agregado el Escritor id: "+ writeId);
     }
 }
